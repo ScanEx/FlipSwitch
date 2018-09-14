@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
   return typeof obj;
 } : function (obj) {
@@ -553,4 +551,4 @@ FlipSwitch.prototype._recompute = function _recompute(changed, state) {
 	}
 };
 
-exports.FlipSwitch = FlipSwitch;
+module.exports = FlipSwitch;

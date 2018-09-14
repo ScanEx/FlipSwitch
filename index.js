@@ -1,3 +1,2 @@
 import FlipSwitch from './src/FlipSwitch.html';
-
-export { FlipSwitch };
+export default FlipSwitch;
