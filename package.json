@@ -1,0 +1,36 @@
+{
+  "name": "scanex-flip-switch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "dist/scanex-flip-switch.cjs.js",
+  "browser": "dist/scanex-flip-switch.min.js",
+  "scripts": {
+    "clean": "del /F /S /Q dist",
+    "build": "npm run clean & rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scanex/FlipSwitch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Scanex/FlipSwitch/issues"
+  },
+  "homepage": "https://github.com/Scanex/FlipSwitch#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "rollup": "^0.64.1",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.1.6",
+    "rollup-plugin-cpy": "^1.0.0",
+    "rollup-plugin-svelte": "^4.2.1",
+    "rollup-plugin-css-porter": "^0.1.2",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-terser": "^1.0.1",
+    "svelte": "^2.10.1"
+  }
+}

@@ -1,0 +1,104 @@
+<div class="scanex-flip-switch noselect">
+    <i class="flip-switch" on:click="back()">&lt;&lt;</i>
+    <i class="flip-switch" on:click="prev()">&lt;</i>
+    {#each frame as f, i}
+        <span class="cell {i === indexInFrame ? 'current' : ''}" on:click="set({current: frameIndex + i})">{format(f)}</span>
+    {/each}
+    <i class="flip-switch" on:click="next()">&gt;</i>
+    <i class="flip-switch" on:click="forward()">&gt;&gt;</i>
+</div>
+
+<style>
+    .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .scanex-flip-switch {
+        cursor: pointer;
+    }
+    .scanex-flip-switch > * {
+        text-align: center;
+        vertical-align: middle;
+    }
+    .scanex-flip-switch .flip-switch:first-child {
+
+    }
+    .scanex-flip-switch .flip-switch:last-child {
+
+    }
+    .scanex-flip-switch .cell {
+        font-size: 14px;
+        padding: 10px; 
+        width: 20px;       
+    }
+    .scanex-flip-switch .current {
+        color: skyblue;
+        font-weight: bold;
+        border-bottom: 2px solid skyblue;
+    }
+</style>
+
+<script>    
+    export default {
+        data() {
+            return {
+                items: [],
+                size: 0,
+                current: null,
+                format: x => x
+            };
+        },
+        computed: {
+            count: ({items}) => items.length,
+            frameIndex: ({current, items, size, count}) => {                
+                if (Array.isArray(items) && count > 0 && 0 <= size && size <= count){
+                    return Math.floor (current / size) * size;
+                }
+                else {
+                    return null;
+                }
+            },
+            indexInFrame: ({current, frameIndex}) => {
+                return current - frameIndex;
+            },
+            frame: ({frameIndex, items, size, count}) => {
+                if (0 <= frameIndex && frameIndex <= count) {
+                    return items.slice(frameIndex, frameIndex + size);
+                }
+                else {
+                    return [];
+                }
+            }
+        },        
+        methods: {
+            next() {                
+                const {count, current} = this.get();
+                if (current != null && current < count - 1) {
+                    this.set({current: current + 1});
+                }
+            },
+            forward() {
+                const {count, current, size} = this.get();
+                if (current != null && current + size < count) {
+                    this.set({current: current + size});
+                }
+            },
+            prev() {
+                const {count, current} = this.get();
+                if (current != null && current > 0) {
+                    this.set({current: current - 1});
+                }
+            },
+            back() {
+                const {count, current, size} = this.get();
+                if (current != null && current - size >= 0) {
+                    this.set({current: current - size});
+                }
+            },
+        },
+    };
+</script>

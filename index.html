@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />    
+        <link rel="stylesheet" href="dist/scanex-flip-switch.css" />
+        <script type="text/javascript" src="dist/scanex-flip-switch.min.js"></script>
+        <style>
+            body {
+                background-color: beige;
+            }
+        </style>
+    </head>
+    <body class="noselect">    
+        <div id="flip"></div>
+        <script type="text/javascript">
+            var hours = [];   
+            var step = 3;
+            for (var i = 0; i <= 72; i += step) {
+                hours.push(i);
+            }
+            var fs = new FlipSwitch.FlipSwitch({
+                target: document.getElementById('flip'),
+                data: {
+                    items: hours,
+                    size: 5,
+                    current: 0,
+                    format: x => x === 0 ? 'Now' : `+${x}`
+                }
+            });
+            fs.on('state', function(state) {
+                console.log(state);
+            });
+        </script>
+    </body>
+</html>
