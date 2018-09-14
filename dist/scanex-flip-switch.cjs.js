@@ -354,18 +354,18 @@ function create_main_fragment(component, ctx) {
 			i_3 = createElement("i");
 			text_7 = createText(">>");
 			addListener(i, "click", click_handler);
-			i.className = "flip-switch svelte-1ginvlf";
+			i.className = "flip-switch svelte-3nsugw";
 			addLoc(i, file, 1, 4, 47);
 			addListener(i_1, "click", click_handler_1);
-			i_1.className = "flip-switch svelte-1ginvlf";
+			i_1.className = "flip-switch svelte-3nsugw";
 			addLoc(i_1, file, 2, 4, 106);
 			addListener(i_2, "click", click_handler_2);
-			i_2.className = "flip-switch svelte-1ginvlf";
+			i_2.className = "flip-switch svelte-3nsugw";
 			addLoc(i_2, file, 6, 4, 328);
 			addListener(i_3, "click", click_handler_3);
-			i_3.className = "flip-switch svelte-1ginvlf";
+			i_3.className = "flip-switch svelte-3nsugw";
 			addLoc(i_3, file, 7, 4, 383);
-			div.className = "scanex-flip-switch noselect svelte-1ginvlf";
+			div.className = "scanex-flip-switch noselect svelte-3nsugw";
 			addLoc(div, file, 0, 0, 0);
 		},
 
@@ -452,7 +452,7 @@ function create_each_block(component, ctx) {
 			span._svelte = { component: component, ctx: ctx };
 
 			addListener(span, "click", click_handler);
-			span.className = span_class_value = "cell " + (ctx.i === ctx.indexInFrame ? 'current' : '') + " svelte-1ginvlf";
+			span.className = span_class_value = "cell " + (ctx.i === ctx.indexInFrame ? 'current' : '') + " svelte-3nsugw";
 			addLoc(span, file, 4, 8, 192);
 		},
 
@@ -467,7 +467,7 @@ function create_each_block(component, ctx) {
 			}
 
 			span._svelte.ctx = ctx;
-			if (changed.indexInFrame && span_class_value !== (span_class_value = "cell " + (ctx.i === ctx.indexInFrame ? 'current' : '') + " svelte-1ginvlf")) {
+			if (changed.indexInFrame && span_class_value !== (span_class_value = "cell " + (ctx.i === ctx.indexInFrame ? 'current' : '') + " svelte-3nsugw")) {
 				span.className = span_class_value;
 			}
 		},
